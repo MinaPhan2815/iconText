@@ -54,7 +54,7 @@ a {
 .container {
     max-width: 600px;
     min-height: 70vh;
-    background: url('./bgjpg.jpg') center/cover no-repeat;
+    background: url('./img/bgjpg.jpg') center/cover no-repeat;
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;

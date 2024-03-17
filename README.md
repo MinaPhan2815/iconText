@@ -2,6 +2,9 @@
 
 This project is a simple web application that converts text input into corresponding emoji icons. It allows users to encode text into emoji icons and decode emoji icons back into text. Additionally, it provides a history feature to keep track of recent conversions.
 
+## Author
+This project is developed by MinhNhatPhan.
+
 ### Features
 
 - **Encode Text to Icons**: Users can input text, and the application will convert each character into a corresponding emoji icon.
@@ -31,3 +34,8 @@ This project is a simple web application that converts text input into correspon
 ### License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Call for Stars
+If you find this project useful and interesting, please consider giving it a star on GitHub. This will help increase visibility and encourage the author to further develop the project with more features and improvements.
+
+Thank you for your support! 🌟

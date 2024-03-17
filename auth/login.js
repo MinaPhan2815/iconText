@@ -71,7 +71,7 @@ const signIn = () => {
       console.log("Đăng nhập thành công:",result.user.displayName);
       localStorage.setItem('displayName', result.user.displayName);
 
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     })
     .catch((error) => {
       console.log("Lỗi đăng nhập: ", error.code);
@@ -85,7 +85,7 @@ const signOut = () => {
       alert("Đăng xuất thành công");
 
       localStorage.removeItem('displayName');
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     })
     .catch((error) => {
       console.error("Lỗi khi đăng xuất:", error);
