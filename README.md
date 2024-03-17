@@ -3,7 +3,7 @@
 This project is a simple web application that converts text input into corresponding emoji icons. It allows users to encode text into emoji icons and decode emoji icons back into text. Additionally, it provides a history feature to keep track of recent conversions.
 
 ## Author
-This project is developed by MinhNhatPhan.
+This project is developed by [MinhNhatPhan](https://www.facebook.com/MinaPhan2815).
 
 ### Features
 
