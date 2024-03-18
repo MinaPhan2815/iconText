@@ -9,8 +9,10 @@ This project is developed by [MinhNhatPhan](https://www.facebook.com/MinaPhan281
 
 - **Encode Text to Icons**: Users can input text, and the application will convert each character into a corresponding emoji icon.
 - **Decode Icons to Text**: Users can input emoji icons, and the application will convert them back into text.
+- **User Authentication**: Allows users to sign up, sign in, sign out, and reset their passwords using Firebase Authentication.
 - **History**: The application keeps track of recent conversions, allowing users to easily access and reuse previous inputs and outputs.
 - **Dark Mode Toggle**: Users can switch between light and dark themes for better readability.
+- **Responsive Design**: Ensures the application is usable on various devices and screen sizes.
 
 ### Technologies Used
 

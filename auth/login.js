@@ -105,6 +105,40 @@ const forgotPassword = () => {
     });
 }
 
+function changePassword() {
+  const email = document.getElementById('changeEmail').value;
+  const currentPassword = document.getElementById('currentPassword').value;
+  const newPassword = document.getElementById('newPassword').value;
+  const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+  const messageChange = document.getElementById('messageChange');
+
+  if (email === '' || currentPassword === '' || newPassword === '' || confirmNewPassword === '') {
+      messageChange.textContent = 'Vui lòng điền đầy đủ thông tin.';
+      return;
+  }
+
+  if (newPassword !== confirmNewPassword) {
+      messageChange.textContent = 'Mật khẩu mới và xác nhận mật khẩu mới không khớp.';
+      return;
+  }
+
+  const user = firebase.auth().currentUser;
+  const credential = firebase.auth.EmailAuthProvider.credential(user.email, currentPassword);
+
+  user.reauthenticateWithCredential(credential)
+      .then(() => {
+          return user.updatePassword(newPassword);
+      })
+      .then(() => {
+          alert('Đổi mật khẩu thành công.');
+          location.href = '../index.html'
+      })
+      .catch((error) => {
+          console.error('Lỗi đổi mật khẩu:', error);
+          messageChange.textContent = 'Mật khẩu hiện tại không đúng hoặc có lỗi xảy ra. Vui lòng thử lại.';
+      });
+}
+
 function showRegisterForm() {
   document.getElementById('loginForm').style.display = 'none';
   document.getElementById('forgotPasswordForm').style.display = 'none';
