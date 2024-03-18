@@ -13,8 +13,12 @@ const buttonToggle = document.querySelector(".theme-toggle span")
 const displayName = localStorage.getItem('displayName');
 if (displayName) {
     const logBtn = document.getElementById('logBtn');
-    logBtn.textContent = displayName + ' (Đăng xuất)';
-    logBtn.onclick = signOut; 
+    logBtn.innerHTML = `${displayName} <span class="arrow">&#9660;</span>`;
+    logBtn.onclick = function() {
+        document.getElementById("dropdownContent").classList.toggle("show");
+    }
+    const login = document.getElementById('login')
+    login.removeAttribute("href");
   }
 
 button.onclick = function () {

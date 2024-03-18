@@ -17,27 +17,30 @@
           <p id="messageLog" class="message"></p>
           <button onclick="signIn()" type="button" class="btn">Đăng nhập</button>
           <p>Chưa có tài khoản? <a href="#" onclick="showRegisterForm()">Đăng ký</a></p>
-          <a href="#" onclick="showForgotPassForm()">Quên mật khẩu</a>
+          <p><a href="#" onclick="showForgotPassForm()">Quên mật khẩu</a></p>
+          <a class="home" href="../index.html">X</a>
         </form>
     
         <!-- Register Form -->
         <form id="registerForm">
           <h2>Đăng ký</h2>
-          <input type="text" id="fullName" placeholder="Họ và tên">
+          <input maxlength="30" type="text" id="fullName" placeholder="Họ và tên">
           <input type="email" id="email" placeholder="Nhập email">
           <input type="password" id="password" placeholder="Nhập mật khẩu">
           <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu">
           <p id="messageReg" class="message"></p>
           <button onclick="signUp()" type="button" class="btn">Đăng ký</button>
           <p>Đã có tài khoản? <a href="#" onclick="showLoginForm()">Đăng nhập</a></p>
+          <a class="home" href="../index.html">X</a>
         </form>
 
         <!-- forgotPass Form -->
         <form id="forgotPasswordForm">
           <h2>Quên mật khẩu</h2>
           <input type="email" id="forgotEmail" placeholder="Địa chỉ email">
+          <p id="messageForgot" class="message"></p>
           <button class="btn" type="button" onclick="forgotPassword()">Đặt lại mật khẩu</button>
-          <p id="messageForgot"></p>
+          <a class="home" href="../index.html">X</a>
         </form>        
     
         

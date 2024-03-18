@@ -19,7 +19,7 @@ const signUp = () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
-  const fullName = document.getElementById("fullName").value; 
+  const fullName = document.getElementById("fullName").value;
   const messageReg = document.getElementById("messageReg");
 
   if (password !== confirmPassword) {
@@ -41,23 +41,20 @@ const signUp = () => {
         fullName: fullName,
         email: email
       })
-      .then(() => {
-        alert('Đăng ký thành công!');
-        document.getElementById('loginForm').style.display = 'block';
-        document.getElementById('registerForm').style.display = 'none';
-        document.getElementById('welcomePage').style.display = 'none';
-      })
-      .catch((error) => {
-        console.error("Error saving user data: ", error);
-        messageReg.textContent = "Đăng ký thành công, nhưng không thể lưu thông tin người dùng vào cơ sở dữ liệu.";
-      });
+        .then(() => {
+          alert('Đăng ký thành công!');
+          showLoginForm()
+        })
+        .catch((error) => {
+          console.error("Error saving user data: ", error);
+          messageReg.textContent = "Đăng ký thành công, nhưng không thể lưu thông tin người dùng vào cơ sở dữ liệu.";
+        });
     })
     .catch((error) => {
       console.log(error.code);
       messageReg.textContent = error.message;
     });
 }
-
 
 // Sign In function
 
@@ -68,10 +65,10 @@ const signIn = () => {
 
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((result) => {
-      console.log("Đăng nhập thành công:",result.user.displayName);
+      console.log("Đăng nhập thành công:", result.user.displayName);
       localStorage.setItem('displayName', result.user.displayName);
 
-      window.location.href = "../index.html";
+      location.href = "../index.html";
     })
     .catch((error) => {
       console.log("Lỗi đăng nhập: ", error.code);
@@ -85,7 +82,8 @@ const signOut = () => {
       alert("Đăng xuất thành công");
 
       localStorage.removeItem('displayName');
-      window.location.href = "../index.html";
+      location.reload();
+      document.getElementById("dropdownContent").classList.remove("show");
     })
     .catch((error) => {
       console.error("Lỗi khi đăng xuất:", error);
@@ -98,7 +96,8 @@ const forgotPassword = () => {
 
   firebase.auth().sendPasswordResetEmail(email)
     .then(() => {
-      messageForgot.textContent = "Một email đã được gửi đến địa chỉ email của bạn. Vui lòng kiểm tra hộp thư đến của bạn để đặt lại mật khẩu.";
+       alert("Một email đã được gửi đến địa chỉ email của bạn. Vui lòng kiểm tra hộp thư đến của bạn để đặt lại mật khẩu.");
+       showLoginForm()
     })
     .catch((error) => {
       console.error("Có lỗi xảy ra: ", error);
@@ -106,18 +105,20 @@ const forgotPassword = () => {
     });
 }
 
-
 function showRegisterForm() {
-    document.getElementById('loginForm').style.display = 'none';
-    document.getElementById('registerForm').style.display = 'block';
-  }
+  document.getElementById('loginForm').style.display = 'none';
+  document.getElementById('forgotPasswordForm').style.display = 'none';
+  document.getElementById('registerForm').style.display = 'block';
+}
 
-  function showLoginForm() {
-    document.getElementById('loginForm').style.display = 'block';
-    document.getElementById('registerForm').style.display = 'none';
-  }
+function showLoginForm() {
+  document.getElementById('loginForm').style.display = 'block';
+  document.getElementById('registerForm').style.display = 'none';
+  document.getElementById('forgotPasswordForm').style.display = 'none';
+}
 
-  function showForgotPassForm() {
-    document.getElementById('loginForm').style.display = 'none';
-    document.getElementById('forgotPasswordForm').style.display = 'block';
-  }
+function showForgotPassForm() {
+  document.getElementById('loginForm').style.display = 'none';
+  document.getElementById('registerForm').style.display = 'none';
+  document.getElementById('forgotPasswordForm').style.display = 'block';
+}

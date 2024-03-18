@@ -24,9 +24,16 @@
                 </div>☪️
             </div>
             <div class="">
-                <a href="./auth/login.html">
-                <button id="logBtn" class="history-button">Đăng nhập</button>
-                </a>
+                <div class="dropdown">
+                    <a id="login" href="./auth/login.html">
+                        <button id="logBtn" class="history-button">Đăng nhập</button>
+                    </a>
+                    <div class="dropdown-content" id="dropdownContent">
+                      <a href="./auth/change-password.html">Đổi mật khẩu</a>
+                      <a style="color: red;" href="#" onclick="signOut()">Đăng xuất</a>
+                    </div>
+                </div>
+                  
                 <button class="history-button" onclick="showHistory()">Gần đây</button>
             </div>
         </div>

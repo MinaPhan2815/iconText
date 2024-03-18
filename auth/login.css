@@ -3,6 +3,7 @@ body {
   min-height: 80vh;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .container {
@@ -16,6 +17,18 @@ input {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+.home{
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  font-size: larger;
 }
 
 .message {
