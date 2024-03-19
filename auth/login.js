@@ -94,6 +94,7 @@ const signIn = () => {
     });
 }
 
+
 // Sign in with Google
 const signInWithGoogle = () => {
   try {
