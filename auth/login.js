@@ -96,28 +96,28 @@ const signIn = () => {
 
 
 // Sign in with Google
-const signInWithGoogle = () => {
-  try {
-    const provider = new firebase.auth.GoogleAuthProvider();
+// const signInWithGoogle = () => {
+//   try {
+//     const provider = new firebase.auth.GoogleAuthProvider();
     
-    firebase.auth().signInWithPopup(provider)
-      .then((result) => {
-        const user = result.user;
+//     firebase.auth().signInWithPopup(provider)
+//       .then((result) => {
+//         const user = result.user;
         
-        location.href = '../index.html'
-        return user;
-      })
-      .catch((error) => {
-        console.error("Lỗi đăng nhập bằng Google:", error);
+//         location.href = '../index.html'
+//         return user;
+//       })
+//       .catch((error) => {
+//         console.error("Lỗi đăng nhập bằng Google:", error);
         
-        return null;
-      });
-  } catch (error) {
-    console.error("Lỗi đăng nhập bằng Google:", error);
+//         return null;
+//       });
+//   } catch (error) {
+//     console.error("Lỗi đăng nhập bằng Google:", error);
     
-    return null;
-  }
-}
+//     return null;
+//   }
+// }
 
 
 const signOut = () => {
